@@ -287,6 +287,67 @@
   .hero-sellos { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 0 auto 18px; }
   .hero-sellos span { background: rgba(255,199,44,.12); border: 1px solid rgba(255,199,44,.45); color: var(--color-sol); border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: .92rem; }
   .hero p#texto-hero { font-size: 1.12rem; max-width: 640px; margin-left: auto; margin-right: auto; color: #e6ecf5; }
+  /* ===== Tema claro celeste ===== */
+  :root { --o-fondo: #e6f3fb; --o-sup: #ffffff; --o-sup2: #eef6fc; --o-borde: #c9e1f1; --o-texto: #14325c; --o-suave: #5a6b82; }
+  body { background: var(--o-fondo); color: var(--o-texto); }
+  header { background: #14325c; border-bottom: 3px solid var(--color-sol); }
+  .logo, .menu-marca { color: var(--color-sol); }
+  header .btn-menu { color: #fff; border-color: rgba(255,255,255,.35); background: transparent; }
+  header .btn-menu:hover { color: var(--color-sol); border-color: var(--color-sol); }
+  h2 { color: #14325c; }
+  .subtitulo, .descripcion, .vacio, .stock-carrito, .menu-titulo { color: var(--o-suave); }
+  .buscador, select, input, textarea { background: #fff; color: var(--o-texto); border-color: var(--o-borde); }
+  .buscador::placeholder, input::placeholder, textarea::placeholder { color: #8a9ab0; }
+  .tarjeta { background: #fff; border: 1px solid var(--o-borde); box-shadow: 0 4px 14px rgba(20,50,92,.08); }
+  .tarjeta:hover { box-shadow: 0 12px 26px rgba(20,50,92,.16); }
+  .imagen.con-stock, .tarjeta .imagen { border-bottom: 1px solid #eef3f8; }
+  .nombre { color: #14325c; }
+  .etiqueta { color: #c8102e; }
+  .precio { color: #14325c; }
+  .btn-agregar { background: var(--color-sol); color: #14325c; }
+  .btn-agregar:disabled { background: #d5dde6; color: #7a879a; }
+  .aviso-lote { background: #fff7dc; border-color: #f3d47a; color: #4a3a05; }
+  .aviso-lote strong { color: #b45309; }
+  .btn-cats { box-shadow: 0 2px 8px rgba(20,50,92,.12); }
+  .carrito-panel { background: #fff; border-color: var(--o-borde); }
+  .fila-item, .paso { border-bottom-color: #e3edf5; }
+  .cantidad button, .btn-copiar { background: var(--o-sup2); color: var(--o-texto); border-color: var(--o-borde); }
+  .quitar { color: #c8102e; }
+  .btn-sec, .btn-volver { color: var(--o-texto); border-color: var(--o-borde); background: #fff; }
+  .btn-volver:hover { color: #14325c; border-color: #14325c; }
+  .datos-mail, .datos-pago { background: var(--o-sup2); color: var(--o-texto); }
+  .info-pago { background: #e3efff; color: #14325c; }
+  .nota-envio { background: #fff1e0; color: #8a4b08; }
+  .nota-envio.ok, .aviso { background: #e3f7ec; color: #12603a; }
+  .menu-lateral { background: #fff; }
+  .cerrar-menu, .menu-lateral button.opcion { color: var(--o-texto); }
+  .menu-lateral button.opcion:hover { background: var(--o-sup2); }
+  .menu-lateral button.opcion.activa { background: #fff3c4; color: #14325c; }
+  .menu-lateral .cuenta { color: var(--o-suave); }
+  .fondo-menu { background: rgba(20,50,92,.45); }
+  .barra-pagar { background: #14325c; border-color: var(--color-sol); box-shadow: 0 10px 30px rgba(20,50,92,.35); }
+  .barra-info span { color: #c9d6e8; }
+  .barra-info strong { color: #fff; }
+  .aviso-flotante { background: #14325c; color: #fff; }
+  footer { background: #14325c; color: #c9d6e8; }
+  a { color: #1d5fb8; }
+  .hero a.btn-principal { color: #14325c; }
+  /* ===== Contenido de cada álbum ===== */
+  .contenido-item { margin: 2px 0 14px; font-weight: 600; color: #1d5fb8; font-size: .95rem; }
+  .imagen.con-stock { height: 220px; }
+  .imagen.con-stock > img { padding: 10px !important; }
+  /* ===== Cabecera y portada en tonos celestes ===== */
+  header { background: rgba(255,255,255,.92); border-bottom: 1px solid var(--o-borde); backdrop-filter: blur(8px); }
+  .logo, .menu-marca { color: #14325c; }
+  header .btn-menu { color: #14325c; border-color: var(--o-borde); background: #fff; }
+  header .btn-menu:hover { color: #1d5fb8; border-color: #1d5fb8; }
+  .hero { background: linear-gradient(180deg, #bfe3f7 0%, #d7eefa 55%, #e6f3fb 100%); border-bottom: 0; color: #14325c; }
+  .hero h1 { color: #14325c; text-shadow: 3px 3px 0 #ffffff; }
+  .hero p, .hero p#texto-hero { color: #2b4a6b; }
+  .hero .btn-principal, .hero a.btn-principal { background: #14325c; color: #fff; }
+  .hero .btn-principal:hover { background: #1d5fb8; }
+  footer { background: #cfe7f6; color: #2b4a6b; }
+  footer a { color: #14325c; }
 </style>
 </head>
 <body>
@@ -312,13 +373,12 @@
 </aside>
 <section class="hero" id="inicio">
     <h1 id="titulo-hero">El Baúl de las Figus</h1>
-  <div class="hero-sellos"><span>📦 Álbum + todos sus sobres</span><span>🔒 Sobres sin abrir</span><span>🚚 Envío gratis</span></div>
   <p id="texto-hero">Álbumes y figuritas coleccionables. Pedí online y recibilo en tu casa.</p>
   <a class="btn-principal" href="#catalogo">Abrir el baúl</a>
 </section>
 <section class="contenedor" id="catalogo">
   <h2 id="titulo-catalogo">Todos los productos</h2>
-  <p class="subtitulo" id="subtitulo-catalogo">Lotes de álbumes con sus sobres originales de época. Envío gratis a todo el país.</p>
+  <p class="subtitulo" id="subtitulo-catalogo">Álbumes antiguos con todos sus sobres originales sin abrir. Envío gratis a todo el país.</p>
   <div class="barra-catalogo">
     <button type="button" class="btn-cats" onclick="abrirMenu()" aria-label="Ver categorías"><span class="rayitas" aria-hidden="true"><i></i><i></i><i></i></span>Categorías</button>
     <input class="buscador" id="buscador" type="text" placeholder="Buscar colección...">
@@ -427,7 +487,7 @@ const CONFIG = {
   nombreTienda: "El Baúl de las Figus",
   moneda: "$",
   tituloHero: "El Baúl de las Figus",
-  textoHero: "Álbumes de época con todos sus sobres originales sin abrir, en un solo lote. Hay muy pocos de cada colección: el primero que lo ve, se lo lleva.",
+  textoHero: "Álbumes antiguos para coleccionistas con sobres originales sin abrir y álbumes completos.",
   whatsapp: "5491135880904", // Número con código de país, sin + ni espacios
   aliasMercadoPago: "franco.dilello.mp", // Alias de Mercado Pago donde transfieren
   cvuMercadoPago: "0000003100099891651619", // CVU de Mercado Pago
@@ -481,18 +541,18 @@ const PRODUCTOS = [];
    - Cada producto necesita un id que no se repita (ej: 125, 126...).
    ========================================================== */
 PRODUCTOS.push(
-  { id: 201, nombre: "Lote NBA Upper Deck 1996-97", descripcion: "Álbum sellado en su bolsa original (trae 2 sobres de regalo). Marca Upper Deck, temporada 1996-97.", lote: "Álbum + 94 sobres originales cerrados", precio: 150000, imagen: IMG.lote_201, categoria: "Coleccionista", stock: 1 },
-  { id: 202, nombre: "Lote NBA Ital Lucca 2005-06", descripcion: "Marca Ital Lucca, temporada 2005-06. Cada lote trae 1 álbum y 45 sobres.", lote: "Álbum + 45 sobres originales cerrados", precio: 112500, imagen: IMG.lote_202, categoria: "Coleccionista", stock: 3 },
-  { id: 203, nombre: "Lote Colección de Fútbol Upper Deck 1997", descripcion: "1ª edición, Upper Deck, 1997.", lote: "Álbum + 33 sobres originales cerrados", precio: 150000, imagen: IMG.lote_203, categoria: "Coleccionista", stock: 1 },
-  { id: 204, nombre: "Lote Mortal Kombat Cromaq + póster", descripcion: "Todo Mortal Kombat de Cromaq, 1995. Cada álbum incluye su póster. Cada lote trae 1 álbum y 42 sobres.", lote: "Álbum + 42 sobres originales cerrados", precio: 70000, imagen: IMG.lote_204, categoria: "Coleccionista", stock: 2 },
-  { id: 205, nombre: "Lote Mortal Kombat", descripcion: "Álbum de figuritas autoadhesivas, industria argentina.", lote: "Álbum + 49 sobres originales cerrados", precio: 70000, imagen: IMG.lote_205, categoria: "Coleccionista", stock: 1 },
-  { id: 206, nombre: "Lote Meteoro 2008", descripcion: "Ital Lucca – Editora Aladino, 2008. Cada lote trae 1 álbum y 15 sobres.", lote: "Álbum + 15 sobres originales cerrados", precio: 45000, imagen: IMG.lote_206, categoria: "Coleccionista", stock: 3 },
-  { id: 207, nombre: "Lote Dinosaur King", descripcion: "Editora Aladino. Cada lote trae 1 álbum y 36 sobres.", lote: "Álbum + 36 sobres originales cerrados", precio: 45000, imagen: IMG.lote_207, categoria: "Coleccionista", stock: 2 },
-  { id: 208, nombre: "Lote Argentina Fútbol Cards 2000", descripcion: "Coleccionador oficial de DS Sticker Collections, 2000.", lote: "Álbum + 39 sobres originales cerrados", precio: 150000, imagen: IMG.lote_208, categoria: "Coleccionista", stock: 1 },
-  { id: 209, nombre: "Lote Godzilla", descripcion: "Top Cards Argentina, 1997.", lote: "Álbum + 64 sobres originales cerrados", precio: 95000, imagen: IMG.lote_209, categoria: "Coleccionista", stock: 1 },
-  { id: 210, nombre: "Lote Los Asquerositos", descripcion: "Marca Topps, 2004.", lote: "Álbum + 49 sobres originales cerrados", precio: 60000, imagen: IMG.lote_210, categoria: "Coleccionista", stock: 1 },
-  { id: 211, nombre: "Lote Amigotes", descripcion: "Marca Cromeros, 2006. Cada lote trae 1 álbum y 46 sobres.", lote: "Álbum + 46 sobres originales cerrados", precio: 70000, imagen: IMG.lote_211, categoria: "Coleccionista", stock: 2 },
-  { id: 212, nombre: "Lote Ositos Cariñosos", descripcion: "Marca Ital Lucca.", lote: "Álbum + 84 sobres originales cerrados", precio: 45000, imagen: IMG.lote_212, categoria: "Coleccionista", stock: 1 }
+  { id: 201, nombre: "NBA Upper Deck 1996-97", descripcion: "Álbum sellado en su bolsa original (trae 2 sobres de regalo). Marca Upper Deck, temporada 1996-97.", lote: "Álbum + 94 sobres originales sin abrir", precio: 150000, imagen: IMG.lote_201, categoria: "Coleccionista", stock: 1 },
+  { id: 202, nombre: "NBA Ital Lucca 2005-06", descripcion: "Marca Ital Lucca, temporada 2005-06.", lote: "Álbum + 140 sobres originales sin abrir", precio: 112500, imagen: IMG.lote_202, categoria: "Coleccionista", stock: 1 },
+  { id: 203, nombre: "Colección de Fútbol Upper Deck 1997", descripcion: "1ª edición, Upper Deck, 1997.", lote: "Álbum + 33 sobres originales sin abrir", precio: 150000, imagen: IMG.lote_203, categoria: "Coleccionista", stock: 1 },
+  { id: 204, nombre: "Mortal Kombat Cromaq + póster", descripcion: "Todo Mortal Kombat de Cromaq, 1995. Incluye póster.", lote: "Álbum + 84 sobres originales sin abrir", precio: 70000, imagen: IMG.lote_204, categoria: "Coleccionista", stock: 1 },
+  { id: 205, nombre: "Mortal Kombat", descripcion: "Álbum de figuritas autoadhesivas, industria argentina.", lote: "Álbum + 49 sobres originales sin abrir", precio: 70000, imagen: IMG.lote_205, categoria: "Coleccionista", stock: 1 },
+  { id: 206, nombre: "Meteoro 2008", descripcion: "Ital Lucca – Editora Aladino, 2008.", lote: "Álbum + 51 sobres originales sin abrir", precio: 45000, imagen: IMG.lote_206, categoria: "Coleccionista", stock: 1 },
+  { id: 207, nombre: "Dinosaur King", descripcion: "Editora Aladino.", lote: "Álbum + 73 sobres originales sin abrir", precio: 45000, imagen: IMG.lote_207, categoria: "Coleccionista", stock: 1 },
+  { id: 208, nombre: "Argentina Fútbol Cards 2000", descripcion: "Coleccionador oficial de DS Sticker Collections, 2000.", lote: "Álbum + 39 sobres originales sin abrir", precio: 150000, imagen: IMG.lote_208, categoria: "Coleccionista", stock: 1 },
+  { id: 209, nombre: "Godzilla", descripcion: "Top Cards Argentina, 1997.", lote: "Álbum + 64 sobres originales sin abrir", precio: 95000, imagen: IMG.lote_209, categoria: "Coleccionista", stock: 1 },
+  { id: 210, nombre: "Los Asquerositos", descripcion: "Marca Topps, 2004.", lote: "Álbum + 49 sobres originales sin abrir", precio: 60000, imagen: IMG.lote_210, categoria: "Coleccionista", stock: 1 },
+  { id: 211, nombre: "Amigotes", descripcion: "Marca Cromeros, 2006.", lote: "Álbum + 92 sobres originales sin abrir", precio: 70000, imagen: IMG.lote_211, categoria: "Coleccionista", stock: 1 },
+  { id: 212, nombre: "Ositos Cariñosos", descripcion: "Marca Ital Lucca.", lote: "Álbum + 84 sobres originales sin abrir", precio: 45000, imagen: IMG.lote_212, categoria: "Coleccionista", stock: 1 }
 );
 /* "Completá tu álbum": álbum, sobre (de ahí sale el precio de cada figurita) y cantidad de figuritas */
 const ALBUMES_FIGUS = [];
@@ -546,13 +606,13 @@ function renderProductos(lista) {
     <div class="tarjeta${tieneStock(p) && p.stock <= 0 ? " sin-stock" : ""}">
       <div class="imagen${tieneStock(p) ? " con-stock" : ""}" style="background:#fff">
         ${imagenTarjeta(p)}
-        ${tieneStock(p) ? `<span class="${claseStock(p)}">${textoStock(p)}</span>` : ""}
+        ${tieneStock(p) && p.stock <= 0 ? `<span class="stock agotado">Agotado</span>` : ""}
       </div>
       <div class="info">
-        <span class="etiqueta">${p.completo ? "Álbum completo · envío gratis" : p.figus ? "Completá tu álbum" : p.lote ? "Lote completo" : p.nombre.startsWith("Álbum") ? "Álbum original" : "Sobre original"}</span>
+        
         <div class="nombre">${p.nombre}</div>
         <div class="descripcion">${p.figus ? `${p.figus.total} figuritas. Elegí las que te faltan (hasta ${CONFIG.maxFigusPorAlbum}), ${formato(p.precio)} cada una.${cantidadFigus(p.id) ? ` <strong>Tenés ${cantidadFigus(p.id)} en el carrito.</strong>` : ""}` : p.descripcion}</div>
-        ${p.lote ? `<div class="aviso-lote"><strong>🎁 Te llevás todo esto</strong>${p.lote.replace("Álbum + ", "1 álbum original + ").replace(" originales cerrados", " sin abrir")}</div>` : ""}
+        ${p.lote ? `<div class="contenido-item">📦 ${p.lote}</div>` : ""}
         <div class="precio">${p.figus ? `<span style="font-size:.85rem;font-weight:600;color:var(--color-suave)">c/u </span>` : ""}${p.precioLista ? `<span class="precio-lista">${formato(p.precioLista)}</span> ` : ""}${formato(p.precio)}${p.precioLista ? ` <span class="ahorro">-${CONFIG.descuentoCombos}%</span>` : ""}</div>
         ${p.figus ? `<button class="btn-agregar" onclick="abrirFigus(${p.id})">Elegir figuritas</button>` : tieneStock(p) && p.stock <= 0 ? `<button class="btn-agregar" disabled>Agotado</button>` : `<button class="btn-agregar" onclick="agregar(${p.id})">Agregar al carrito</button>`}
       </div>
@@ -587,7 +647,7 @@ function claseStock(p) { return "stock" + (p.stock <= 0 ? " agotado" : p.stock <
 function hayLugar(id, enCarrito) {
   const p = PRODUCTOS.find(x => x.id === id);
   if (!tieneStock(p) || enCarrito < p.stock) return true;
-  mostrarAviso(p.stock <= 0 ? `${p.nombre} está agotado.` : `Solo ${p.stock === 1 ? "queda 1" : `quedan ${p.stock}`} de ${p.nombre} y ya ${p.stock === 1 ? "está" : "están"} en tu carrito.`);
+  mostrarAviso(p.stock <= 0 ? `${p.nombre} está agotado.` : `${p.nombre} ya está en tu carrito: hay uno solo.`);
   return false;
 }
 function mostrarAviso(texto) {
@@ -732,7 +792,7 @@ function actualizarCarrito() {
     return `
       <div class="fila-item">
         <div class="emoji">${p.imagen.includes(".") || p.imagen.includes("/") ? `<img src="${p.imagen}" alt="" style="width:44px;height:56px;object-fit:cover;border-radius:4px">` : p.imagen}</div>
-        <div class="datos"><div class="nombre">${p.nombre}</div><div>${formato(p.precio)} c/u</div>${tieneStock(p) ? `<div class="stock-carrito">Quedan ${p.stock} en stock</div>` : ""}${c.numeros ? `<div class="nums-carrito">N° ${textoNumeros(c.numeros)}</div>` : ""}</div>
+        <div class="datos"><div class="nombre">${p.nombre}</div><div>${formato(p.precio)} c/u</div>${c.numeros ? `<div class="nums-carrito">N° ${textoNumeros(c.numeros)}</div>` : ""}</div>
         ${c.numeros ? `<div class="cantidad"><button style="width:auto;padding:0 10px" onclick="abrirFigus(${p.id})">Editar (${c.cantidad})</button></div>` : `<div class="cantidad">
           <button onclick="cambiarCantidad(${p.id}, -1)">−</button>
           <span>${c.cantidad}</span>
@@ -977,7 +1037,7 @@ function filtrarCatalogo() {
   }
   renderProductos(lista);
   document.getElementById("titulo-catalogo").textContent = sec.nombre;
-  document.getElementById("subtitulo-catalogo").textContent = sec.texto || "Lotes de álbumes con sus sobres originales de época. Envío gratis a todo el país.";
+  document.getElementById("subtitulo-catalogo").textContent = sec.texto || "Álbumes antiguos con todos sus sobres originales sin abrir. Envío gratis a todo el país.";
   document.querySelectorAll("[data-seccion]").forEach(el => el.classList.toggle("activa", el.dataset.seccion === seccionActual));
 }
 function verSeccion(id) {
