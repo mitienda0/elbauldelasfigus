@@ -348,6 +348,18 @@
   .hero .btn-principal:hover { background: #1d5fb8; }
   footer { background: #cfe7f6; color: #2b4a6b; }
   footer a { color: #14325c; }
+  /* ===== Contacto por Instagram ===== */
+  .btn-contacto { position: fixed; left: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 59; display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px 12px 14px; border-radius: 999px; color: #fff; text-decoration: none; font-weight: 600; background: linear-gradient(45deg, #f9a825, #e1306c 45%, #833ab4); box-shadow: 0 8px 22px rgba(131,58,180,.35); transition: bottom .25s ease, transform .15s ease; }
+  .btn-contacto:hover { transform: translateY(-2px); color: #fff; }
+  body.con-barra .btn-contacto { bottom: calc(96px + env(safe-area-inset-bottom, 0px)); }
+  body.modo-pago .btn-contacto { display: none; }
+  @media (max-width: 620px) { .btn-contacto span { display: none; } .btn-contacto { padding: 13px; } }
+  .opcion-link { display: block; text-decoration: none; }
+  footer { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .footer-contacto { background: #14325c; color: #fff !important; text-decoration: none; padding: 10px 20px; border-radius: 999px; font-weight: 600; }
+  .footer-ig { display: inline-flex; align-items: center; gap: 8px; color: #14325c !important; text-decoration: none; font-weight: 600; }
+  body.con-barra footer { padding-bottom: 110px; }
+  .menu-lateral a.opcion-link { color: var(--o-texto); }
 </style>
 </head>
 <body>
@@ -369,6 +381,8 @@
   <div id="menu-categorias"></div>
   <div class="menu-titulo">Tu compra</div>
   <button class="opcion" type="button" onclick="cerrarMenu(); abrirPago()">🛒 Ir a pagar</button>
+  <div class="menu-titulo">¿Dudas?</div>
+  <a class="opcion opcion-link" href="https://ig.me/m/elbauldelasfigus" target="_blank" rel="noopener">💬 Contactanos por Instagram</a>
   
 </aside>
 <section class="hero" id="inicio">
@@ -471,12 +485,14 @@
   </div>
 </div>
 <div class="aviso-flotante" id="aviso-flotante" role="status"></div>
+<a class="btn-contacto" href="https://ig.me/m/elbauldelasfigus" target="_blank" rel="noopener" aria-label="Contactanos por Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></svg><span>Contactanos</span></a>
 <div class="barra-pagar" id="barra-pagar">
   <div class="barra-info"><span id="barra-cant">0 productos</span><strong id="barra-total">$0</strong></div>
   <button type="button" class="btn-ir-pagar" onclick="abrirPago()">Ir a pagar →</button>
 </div>
 <footer>
-  
+  <a class="footer-contacto" href="https://ig.me/m/elbauldelasfigus" target="_blank" rel="noopener">💬 Contactanos</a>
+  <a class="footer-ig" href="https://www.instagram.com/elbauldelasfigus/" target="_blank" rel="noopener" aria-label="Instagram de El Baúl de las Figus"><svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></svg><span>@elbauldelasfigus</span></a>
   <p id="footer-texto">© El Baúl de las Figus</p>
 </footer>
 <script>
@@ -501,7 +517,8 @@ const CONFIG = {
   // Reglas de envío gratis
   maxFigusPorAlbum: 20, // máximo de figuritas sueltas por álbum en un pedido
   descuentoCombos: 15, // % de descuento de los combos sobre el precio de comprar todo por separado
-  instagram: "",
+  instagram: "https://www.instagram.com/elbauldelasfigus/",
+  mensajeInstagram: "https://ig.me/m/elbauldelasfigus",
   facebook: "",
   montoParaEnvioGratis: 40000, // Con compras desde este monto (sin contar el envío), el envío es gratis
   provincias: ["Buenos Aires", "Ciudad Autónoma de Buenos Aires", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucumán"]
@@ -976,7 +993,9 @@ function actualizarBarra() {
   const cant = carrito.reduce((s, c) => s + c.cantidad, 0);
   const barra = document.getElementById("barra-pagar");
   if (!barra) return;
-  barra.classList.toggle("visible", cant > 0 && !document.body.classList.contains("modo-checkout") && !document.body.classList.contains("modo-pago"));
+  const verBarra = cant > 0 && !document.body.classList.contains("modo-checkout") && !document.body.classList.contains("modo-pago");
+  barra.classList.toggle("visible", verBarra);
+  document.body.classList.toggle("con-barra", verBarra);
   document.getElementById("barra-cant").textContent = cant === 1 ? "1 producto" : `${cant} productos`;
   document.getElementById("barra-total").textContent = formato(calcularSubtotal());
 }
