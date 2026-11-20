@@ -1106,12 +1106,12 @@ function nuevaCompra() {
 /* ===== Secciones por tema =====
    Para cambiar un producto de sección, mové su nombre (sin "Álbum"/"Sobre") a otra lista. */
 const TEMAS = {
-  deportes: ["NBA Upper Deck 1996-97", "NBA Ital Lucca 2005-06", "Colección de Fútbol Upper Deck 1997", "Argentina Fútbol Cards 2000", "Fútbol 2001", "Calcioflash 93", "Moto Show", "Xtreme", "Fórmula 1", "Golden Car"],
-  dibujitos: ["Meteoro 2008", "Dinosaur King", "Ositos Cariñosos", "Pucca", "Doki", "Dragon Ball Z", "Bananas en Pijamas", "ReBoot", "Frutillita 2", "Micaela", "Sweet Berry Cerecita", "Samurai Warriors", "iCarly", "Teenangels", "Power Rangers", "Super Torpe", "Hugo", "Izn Gud", "Isidoro"],
-  peliculas: ["Mortal Kombat Cromaq + póster", "Mortal Kombat", "Godzilla", "Space Jam", "Locademia de Policía", "Rey León II", "Tomb Raider"],
-  superheroes: ["Capitán América y los Superhéroes", "Batman Forever", "Liga de la Justicia"],
-  munecas: ["Barbie Trajes del Mundo", "Sindy", "Valentina", "Bratz", "Maga para nosotras"],
-  bizarras: ["Los Asquerositos", "Amigotes", "Basuritas & Monsters", "Caripelas del Espectáculo", "Trash Tension"]
+  deportes: ["NBA Upper Deck 1996-97", "NBA Ital Lucca 2005-06", "Colección de Fútbol Upper Deck 1997", "Argentina Fútbol Cards 2000", "Xtreme", "Fórmula 1", "Golden Car", "Fútbol 2001", "Calcioflash 93", "Moto Show"],
+  superheroes: ["Power Rangers", "Capitán América y los Superhéroes", "Batman Forever", "Liga de la Justicia", "Mortal Kombat Cromaq + póster", "Mortal Kombat", "Dragon Ball Z", "Space Jam", "Locademia de Policía", "Samurai Warriors"],
+  nenas: ["Barbie Trajes del Mundo", "Sindy", "Micaela", "Pucca", "Sweet Berry Cerecita", "Frutillita 2", "Valentina", "Love Is", "Maga para nosotras", "iCarly", "Teenangels", "Ternura", "Me Gusta"],
+  infantiles: ["Doki", "Super Torpe", "Bananas en Pijamas", "Hugo"],
+  varios: ["Invasión Alien", "Basuritas & Monsters", "Fuerza de Choque", "Caripelas del Espectáculo", "Trash Tension", "ReBoot", "Don Quijote de la Mancha", "Bratz", "Izn Gud", "El mundo donde vivo yo", "Isidoro", "Tomb Raider", "Meteoro 2008", "Amigotes", "Los Asquerositos"],
+  animales: ["Godzilla", "Ositos Cariñosos", "Dinosaur King", "Rey León II", "Discovery Channel", "Dinosaurios"]
 };
 function coleccionDe(p) { return p.nombre.replace(/^(Álbum|Sobre|Lote) /, ""); }
 PRODUCTOS.forEach(p => {
@@ -1120,12 +1120,12 @@ PRODUCTOS.forEach(p => {
 });
 const SECCIONES = [
   { id: "todos", nombre: "Todos los productos", icono: "🗂️", filtro: p => true },
-  { id: "deportes", nombre: "Deportes", icono: "⚽", filtro: p => p.tema === "deportes", texto: "Fútbol, NBA y más: los álbumes deportivos de otras épocas." },
-  { id: "dibujitos", nombre: "Dibujitos y series", icono: "📺", filtro: p => p.tema === "dibujitos", texto: "Los dibujitos y las series que mirabas después del colegio." },
-  { id: "peliculas", nombre: "Películas y videojuegos", icono: "🎬", filtro: p => p.tema === "peliculas", texto: "Álbumes de las películas y los videojuegos que marcaron una época." },
-  { id: "superheroes", nombre: "Superhéroes", icono: "🦸", filtro: p => p.tema === "superheroes", texto: "Batman, el Capitán América, la Liga de la Justicia y más héroes en álbumes de época." },
-  { id: "munecas", nombre: "Muñecas", icono: "🎀", filtro: p => p.tema === "munecas", texto: "Las colecciones de muñecas más buscadas." },
-  { id: "bizarras", nombre: "Las más bizarras", icono: "🤪", filtro: p => p.tema === "bizarras", texto: "Asquerosas, locas y desopilantes: las figus que nos hacían reír." },
+  { id: "deportes", nombre: "Deportes", icono: "⚽", filtro: p => p.tema === "deportes", texto: "Fútbol, NBA, Fórmula 1 y más: los álbumes deportivos de otras épocas." },
+  { id: "superheroes", nombre: "Superhéroes", icono: "🦸", filtro: p => p.tema === "superheroes", texto: "Héroes, luchadores y guerreros en álbumes de época." },
+  { id: "nenas", nombre: "Nenas", icono: "🎀", filtro: p => p.tema === "nenas", texto: "Muñecas, novelas y personajes que marcaron una época." },
+  { id: "infantiles", nombre: "Infantiles", icono: "🧸", filtro: p => p.tema === "infantiles", texto: "Los dibujitos de la tele en figuritas." },
+  { id: "varios", nombre: "Varios", icono: "📦", filtro: p => p.tema === "varios", texto: "Colecciones únicas, bizarras y difíciles de encontrar." },
+  { id: "animales", nombre: "Animales", icono: "🦖", filtro: p => p.tema === "animales", texto: "Dinosaurios, monstruos y animales de todo el mundo." },
   { id: "otras", nombre: "Otras colecciones", icono: "📦", filtro: p => p.tema === "otras" }
 ];
 /* Las secciones sin productos no se muestran */
